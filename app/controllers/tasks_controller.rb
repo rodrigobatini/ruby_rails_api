@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
     before_action :set_task, only: [:show, :update, :destroy]
+    #before_action :setup, only: [:create]
 
     # GET /tasks
     def index
@@ -46,4 +47,8 @@ class TasksController < ApplicationController
     def task_params
       params.require(:task).permit(:title, :description, :completed)
     end
+
+    #def setup
+    #    puts "entrei no setup"
+    #end
   end   
